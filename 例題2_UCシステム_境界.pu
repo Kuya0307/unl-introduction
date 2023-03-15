@@ -1,0 +1,11 @@
+@startuml ユースケース図
+skinparam actorStyle awesome
+' left to right direction
+actor 利用者 #Blue;line:Black;line.bold;text:green
+package 携帯システム {
+usecase 連絡先を登録する #palegreen;line:green;line.dashed;text:green
+usecase 電話をかける #pink;line:red;line.bold;text:Blue
+}
+利用者 --> 連絡先を登録する 
+利用者 --> 電話をかける 
+@enduml
