@@ -1,5 +1,6 @@
 @startuml ユースケース図
     ' left to right direction
+    actor 利用者
     usecase 宿泊予約
     usecase ログイン
     宿泊予約 <. ログイン : << include >>

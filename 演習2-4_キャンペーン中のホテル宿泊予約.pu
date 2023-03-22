@@ -1,4 +1,5 @@
 @startuml ユースケース図
+actor 利用者
 rectangle 予約システム {
 usecase キャンペーン価格にする
 usecase (<u>予約する</u>\n拡張点\nキャンペーン期間) as input
