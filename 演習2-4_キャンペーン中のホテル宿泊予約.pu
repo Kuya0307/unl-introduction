@@ -1,8 +1,11 @@
 @startuml ユースケース図
 actor 利用者
 rectangle 予約システム {
-usecase キャンペーン価格にする
+usecase キャンペーン
+usecase ログイン
 usecase (<u>予約する</u>\n拡張点\nキャンペーン期間) as input
 }
-input <. (キャンペーン価格にする) : <<extend>>
+キャンペーン .> input : << extend >>
+input .> ログイン :<< include >>
+利用者 --> input
 @enduml
