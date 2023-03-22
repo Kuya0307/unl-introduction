@@ -1,0 +1,23 @@
+@startuml
+left to right direction
+actor 申請者 as user #DDDDDD;line:black;line.bold;
+actor 承認者 as syo #DDDDDD;line:black;line.bold;
+actor 経理担当者 as kei #DDDDDD;line:black;line.bold;
+actor 交通費清算システム as kou #DDDDDD;line:black;line.bold;
+rectangle 出張申請システム{
+    usecase 出張申請を登録する as t1
+    usecase 出張申請を提出する as t2
+    usecase 出張申請を承認する as t3
+    usecase 出張申請を却下する as t4
+    usecase 出張申請を差し戻す as t5
+    usecase 出張申請を確認する as t6
+}
+user --> t1
+user --> t2
+syo --> t3
+syo --> t4
+syo --> t5
+syo --> t6
+kei --> t6
+t1 <-- kou
+@enduml
