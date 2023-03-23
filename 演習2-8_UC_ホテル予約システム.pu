@@ -1,0 +1,25 @@
+@startuml ユースケース図
+    left to right direction
+    actor 利用者 as user
+    actor 従業員 as jyu
+    actor 管理者 as admin
+    rectangle ホテル予約システム{
+        usecase 会員登録をする as tou
+        usecase (<u>予約する</u>\n拡張点\nキャンペーン期間\n会員登録) as resolve
+        usecase ログイン as log 
+        usecase キャンペーン価格にする as kyan
+        usecase 空室状況を閲覧する as see
+        usecase 空室状況を入力する as nyu
+        usecase 予約を集計する as syu
+    syu ..> log : << include >>
+    nyu ..> log : << include >>
+    resolve ..> log : << extend >>
+    tou ..> resolve : << extend >>
+    kyan ..> resolve : << extend >>
+    user --> tou
+    user --> see
+    jyu --> admin
+    admin --> syu
+    jyu --> nyu
+    }
+@enduml
