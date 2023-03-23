@@ -1,0 +1,10 @@
+@startuml ユースケース図
+    left to right direction
+    actor 商品出荷担当者 as tan
+    rectangle 販売管理システム{
+        usecase 注文商品を確認する as kaku
+        usecase 出荷状況を登録する as tou
+    }
+    tan --> kaku
+    tan --> tou
+@enduml
