@@ -1,6 +1,5 @@
 @startuml クラス図
     skinparam classAttributeIconSize 0
-    hide Employee circle
     ' class A << ステレオタイプ >>{}
     ' class B {
     '     - 属性１:int
@@ -31,4 +30,5 @@
         + setDept(dept:String):void
         + getDept():String
     }
+    hide Employee circle
 @enduml
