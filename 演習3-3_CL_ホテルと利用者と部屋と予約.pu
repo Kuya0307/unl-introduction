@@ -19,8 +19,8 @@ left to right direction
         - 値段
     }
     ho"1" -- "*"room
-    ' ho"1" -- "*"user
-    user"1" -- "*"room
+    ho"1" -- "*"user
+    ' user"1" -- "*"room
     user"1" -- "1"res
     room"*" -- "1"res
 @enduml
