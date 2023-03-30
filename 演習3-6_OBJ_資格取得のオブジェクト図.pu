@@ -1,0 +1,17 @@
+@startuml オブジェクト図
+    object "<u>高橋洋平:社員</u>" as taka{
+
+    }
+    object "<u>樋口正之:社員</u>" as higu{
+
+    }
+    object "<u>情報処理安全確保支援士:資格" as riss{
+
+    }
+    object "<u>LinuC試験Level1:資格" as linuc{
+
+    }
+    taka -- riss
+    higu -- riss
+    taka -- linuc
+@enduml

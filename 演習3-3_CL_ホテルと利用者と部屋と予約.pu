@@ -1,0 +1,28 @@
+@startuml クラス図
+left to right direction
+    class "利用者" as user{
+        - 名前
+        - 住所
+        - 電話番号
+    }
+    class "ホテル" as ho{
+        - 部屋
+    }
+    class "部屋" as room{
+        - タイプ
+        - 価格
+        - キャンペーン価格
+    }
+    class "予約" as res{
+        - チェックイン日
+        - 滞在期間
+        - 値段
+    }
+    ho"1" o-- "*"room
+    user"1" -- "1"res
+    room"*" -right- "1"res
+    user"1" -- "1"room
+    res"*" --o "1"ho
+    ho"1" -- "*"user
+
+@enduml

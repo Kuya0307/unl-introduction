@@ -1,0 +1,22 @@
+@startuml オブジェクト図
+    object "<u>タイヤ1:タイヤ</u>" as T1{
+
+    }
+    object "<u>タイヤ2:タイヤ</u>" as T2{
+
+    }
+    object "<u>タイヤ3:タイヤ</u>" as T3{
+
+    }
+    object "<u>タイヤ4:タイヤ</u>" as T4{
+
+    }
+    object "<u>車体：車</u>" as K{
+
+    }
+    K -up- T1
+    K -right- T2
+    K -left- T3
+    K -down- T4
+
+@enduml

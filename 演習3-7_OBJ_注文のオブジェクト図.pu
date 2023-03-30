@@ -1,0 +1,35 @@
+@startuml オブジェクト図
+    object "<u>高橋洋平:重要顧客</u>" as you{
+
+    }
+    object "<u>高田利恵:顧客</u>" as rie{
+
+    }
+    object "<u>大坪直之:顧客</u>" as nao{
+
+    }
+    object "<u>テレビ:商品" as tv{
+        型式=V12345
+    }
+    object "<u>冷蔵庫:商品" as rei{
+        型式=R8765
+    }
+    object "<u>プロジェクタ:商品" as pro{
+        型式=P1122
+    }
+    object "<u>11月21日:注文" as 11212{
+        数量=2
+    }
+    object "<u>11月21日:注文" as 11211{
+        数量=1
+    }
+    object "<u>12月23日:注文" as 1223{
+        数量=1
+    }
+    you -- 11212
+    you -- 11211
+    tv -- 11212
+    rei -- 11211
+    rie -- 1223
+    rei -- 1223
+@enduml
