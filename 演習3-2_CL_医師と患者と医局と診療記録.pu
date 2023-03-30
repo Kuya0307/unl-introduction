@@ -1,9 +1,6 @@
 @startuml クラス図
-left to right direction
+' left to right direction
     class 医師{
-
-    }
-    class 担当医{
 
     }
     class 患者{
@@ -15,8 +12,7 @@ left to right direction
     class 医局{
 
     }
-    担当医"1" --> "*"患者:診察する >
-    医師 o-- 担当医
-    担当医"1" -- "*"観察記録
+    医師"1" --> "*"患者:診察する >
+    医師"1" -- "*"観察記録
     医師"*" --o "1"医局
 @enduml
