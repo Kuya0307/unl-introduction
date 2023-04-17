@@ -1,0 +1,16 @@
+@startuml
+hide footbox
+participant controller as con
+participant hotel as hotel
+participant ":予約" as res
+activate con
+con -> hotel :予約
+activate hotel
+create res
+hotel -> res :<<create>>
+hotel -> hotel :予約登録
+activate hotel
+deactivate hotel
+deactivate hotel
+deactivate con
+@enduml

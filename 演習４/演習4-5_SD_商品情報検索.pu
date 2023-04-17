@@ -1,0 +1,29 @@
+@startuml
+hide footbox
+actor 会員 as user
+participant "商品検索画面" as ser << boundary >>
+participant "検索コントローラ" as  con<< control >>
+participant "商品" as goods<< entity >>
+participant "商品情報" as data << entity >>
+activate user
+    user -> ser :商品情報入力
+    activate ser
+        ser -> con :商品検索()
+        activate con
+            create goods
+            con --->> goods :<< create >> 生成()
+            loop 商品カテゴリ数
+            create data
+            con --->> data : << create >> 生成()
+            con -> goods
+            activate goods
+            deactivate goods
+            end loop
+            ser <<--- con :商品情報
+        deactivate con
+        ser -> ser :商品情報表示(商品情報)
+        activate ser
+        deactivate ser
+    deactivate ser
+deactivate user
+@enduml

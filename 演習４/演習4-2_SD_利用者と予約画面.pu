@@ -1,0 +1,15 @@
+@startuml
+hide footbox
+participant "user:利用者" as user
+participant ":予約画面" as res
+' participant ":ログインコントローラ" as con
+mainframe ad ログイン
+user ->> res :ログイン()
+activate res
+note left of res : 非同期
+res -> res:認証()
+note right of res :同期
+activate res
+deactivate res
+deactivate res
+@enduml
