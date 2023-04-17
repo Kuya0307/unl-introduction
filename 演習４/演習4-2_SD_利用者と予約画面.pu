@@ -3,7 +3,7 @@ hide footbox
 participant "user:利用者" as user
 participant ":予約画面" as res
 ' participant ":ログインコントローラ" as con
-mainframe ad ログイン
+mainframe sd ログイン
 user ->> res :ログイン()
 activate res
 note left of res : 非同期

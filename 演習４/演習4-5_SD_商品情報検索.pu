@@ -4,18 +4,18 @@ actor 会員 as user
 participant "商品検索画面" as ser << boundary >>
 participant "検索コントローラ" as  con<< control >>
 participant "商品" as goods<< entity >>
-participant "商品情報" as data << entity >>
+participant "商品カテゴリ" as data << entity >>
 activate user
-    user -> ser :商品情報入力
+    user -> ser :商品情報入力(名前)
     activate ser
-        ser -> con :商品検索()
+        ser -> con :商品検索(名前)
         activate con
             create goods
             con --->> goods :<< create >> 生成()
             loop 商品カテゴリ数
             create data
             con --->> data : << create >> 生成()
-            con -> goods
+            con -> goods::商品検索(名前)
             activate goods
             deactivate goods
             end loop
