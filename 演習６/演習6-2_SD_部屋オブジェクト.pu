@@ -1,0 +1,18 @@
+@startuml ステートマシン図
+left to right direction
+state 部屋{
+    state entry <<entryPoint>>
+    state exit <<exitPoint>>
+    entry --> 空室状態
+    state c <<choice>>
+    空室状態 --> 予約済状態: 予約がされた
+    予約済状態 --> c
+    c --> 使用状態: チェックインされた
+    c --> 空室状態: キャンセルされた
+    使用状態 -> 空室状態: チェックアウトされた
+    空室状態 -> exit
+}
+[*] --> entry
+exit -> [*]
+@enduml
+

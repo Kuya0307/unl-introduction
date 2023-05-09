@@ -1,0 +1,9 @@
+@startuml ステートマシン図
+left to right direction
+[*] -right-> 待機中
+state c <<choice>>
+待機中 --> c
+c --> 用紙無し:　印刷用紙がない
+c --> 印刷中
+印刷中 --> [*]
+@enduml
