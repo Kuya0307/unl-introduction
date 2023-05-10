@@ -1,0 +1,17 @@
+@startuml ユースケース図
+    left to right direction
+    actor 患者 as kan
+    actor 看護師 as ns
+    rectangle 診察予約システム{
+        usecase 予約情報を登録する as res
+        usecase 順番を確認する as conf
+        usecase 予約を取り消す as del
+        usecase 患者番号を一つ増やす as inc
+    }
+    kan --> res
+    kan --> conf
+    kan --> del
+    inc <-- ns
+
+
+@enduml
