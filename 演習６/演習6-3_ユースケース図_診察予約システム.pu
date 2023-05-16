@@ -7,11 +7,13 @@
         usecase 順番を確認する as conf
         usecase 予約を取り消す as del
         usecase 患者番号を一つ増やす as inc
+        usecase 今の順番を閲覧する as look
     }
     kan --> res
     kan --> conf
     kan --> del
     inc <-- ns
-
+    look <-- ns 
+    look <-- kan 
 
 @enduml

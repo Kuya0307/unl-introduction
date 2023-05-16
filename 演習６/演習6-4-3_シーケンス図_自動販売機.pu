@@ -1,0 +1,17 @@
+@startuml シーケンス図
+hide footbox
+Actor 客 as cos
+participant 料金装置 as money
+participant ベンダー装置 as ben
+
+autonumber
+
+mainframe sd 購入
+cos -> money : お金を入れる
+activate money
+cos -> ben : ボタンを押す
+deactivate
+activate ben
+ben -> cos : ドリンクが出てくる
+deactivate
+@enduml
