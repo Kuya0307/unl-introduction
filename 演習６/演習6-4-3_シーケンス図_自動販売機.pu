@@ -1,15 +1,29 @@
-@startuml シーケンス図
+@startuml
 hide footbox
 actor 客
-participant ":料金装置" as 装置
-participant ":ボタン" as ボタン
-participant ":ベンダー装置" as ベンダー
+participant 料金装置
+participant ボタン
+participant ベンダー装置
 
-客 -> 装置: お金を入れる
-activate 装置
-ボタン -> ベンダー: ボタン押下
-activate ベンダー
-ベンダー --> 客: ドリンク排出
-deactivate 装置
-deactivate ベンダー
+activate 客
+
+客 -> 料金装置: お金を入れる
+activate 料金装置
+
+客 -> ボタン: ボタンを押す
+activate ボタン
+
+ボタン -> ベンダー装置: ドリンクの注文
+activate ベンダー装置
+
+ベンダー装置 -> ボタン: ドリンクの出力
+deactivate ベンダー装置
+
+ボタン --> 料金装置: 注文完了
+deactivate ボタン
+
+料金装置 --> 客: ドリンクを提供
+deactivate 料金装置
+
+deactivate 客
 @enduml
