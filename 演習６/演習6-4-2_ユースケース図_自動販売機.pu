@@ -2,14 +2,12 @@
 left to right direction
 actor 客 as cos
 actor ベンダー as ben
-rectangle 自動販売機{
-    usecase ドリンクを運ぶ as car 
+rectangle 自動販売機{ 
     usecase 料金を回収する as rec
     usecase お金を入れる as in
     usecase ボタンを押す as push
 }
 cos --> in
 cos --> push
-ben --> car
 ben --> rec
 @enduml

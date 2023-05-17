@@ -1,17 +1,15 @@
 @startuml シーケンス図
 hide footbox
-Actor 客 as cos
-participant 料金装置 as money
-participant ベンダー装置 as ben
+actor 客
+participant ":料金装置" as 装置
+participant ":ボタン" as ボタン
+participant ":ベンダー装置" as ベンダー
 
-autonumber
-
-mainframe sd 購入
-cos -> money : お金を入れる
-activate money
-cos -> ben : ボタンを押す
-deactivate
-activate ben
-ben -> cos : ドリンクが出てくる
-deactivate
+客 -> 装置: お金を入れる
+activate 装置
+ボタン -> ベンダー: ボタン押下
+activate ベンダー
+ベンダー --> 客: ドリンク排出
+deactivate 装置
+deactivate ベンダー
 @enduml

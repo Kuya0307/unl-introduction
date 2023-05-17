@@ -4,16 +4,20 @@
     actor 看護師 as ns
     rectangle 診察予約システム{
         usecase 予約情報を登録する as res
+        ' usecase 電話番号 as  tel
+        ' usecase 名前 as name
         usecase 順番を確認する as conf
         usecase 予約を取り消す as del
-        usecase 患者番号を一つ増やす as inc
+        ' usecase 患者番号を一つ増やす as inc
         usecase 今の順番を閲覧する as look
     }
     kan --> res
+    ' tel -up-|> res
+    ' name -up-|> res
     kan --> conf
     kan --> del
-    inc <-- ns
+    ' inc <-- ns
     look <-- ns 
     look <-- kan 
-
+    
 @enduml
