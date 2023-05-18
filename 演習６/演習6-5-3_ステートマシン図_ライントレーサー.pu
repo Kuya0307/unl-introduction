@@ -1,0 +1,14 @@
+@startuml ステートマシン図
+' left to right direction
+state 電源ON{
+state entry <<entryPoint>>
+state exit <<exitPoint>>
+entry -left-> 右旋回
+右旋回 --> 左旋回
+左旋回 --> 右旋回
+}
+電源OFF --> entry :スイッチが押された
+右旋回 --> exit
+[*] --> 電源OFF
+exit --> [*]
+@enduml

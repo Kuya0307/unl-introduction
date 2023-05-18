@@ -1,0 +1,17 @@
+@startuml ユースケース図
+left to right direction
+actor ユーザー as user
+actor CPU as CPU
+rectangle ライントレーサー{
+    usecase 電源SWを入れる as sw 
+    usecase 右モーターをOFFにする as rof
+    usecase 右モーターをONにする as ron
+    usecase 左モーターをOFFにする as lof
+    usecase 左モーターをONにする as lon
+}
+user --> sw
+rof <-- CPU
+ron <-- CPU
+lof <-- CPU
+lon <-- CPU
+@enduml
