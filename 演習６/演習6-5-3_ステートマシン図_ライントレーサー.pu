@@ -7,9 +7,9 @@ entry -left-> 右旋回
 右旋回 --> 左旋回 :　明るい
 左旋回 --> 右旋回 : 暗い
 }
-電源OFF --> entry :スイッチが押された
-entry --> 電源OFF :スイッチが押された
+電源OFF -> entry :スイッチが押された
+exit -> 電源OFF :スイッチが押された
 右旋回 --> exit
 [*] -left-> 電源OFF
-exit --> [*]
+電源OFF --> [*]
 @enduml
