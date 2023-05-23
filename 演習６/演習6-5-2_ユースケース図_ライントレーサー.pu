@@ -1,8 +1,8 @@
 @startuml ユースケース図
 left to right direction
 actor ユーザー as user
+actor CPU as CPU
 rectangle ライントレーサー{
-    actor CPU as CPU
     usecase 電源SWを入れる as sw 
     usecase 右モーターをOFFにする as rof
     usecase 右モーターをONにする as ron
