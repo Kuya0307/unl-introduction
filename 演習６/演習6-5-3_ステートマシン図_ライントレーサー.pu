@@ -3,13 +3,14 @@ left to right direction
 state 電源ON{
 state entry <<entryPoint>>
 state exit <<exitPoint>>
-entry -left-> 右旋回
-右旋回 --> 左旋回 :　明るい
 左旋回 --> 右旋回 : 暗い
+右旋回 --> 左旋回 :　明るい
+entry -> 右旋回
 }
-電源OFF --> entry :スイッチが押された
-exit --> 電源OFF :スイッチが押された
-右旋回 --> exit
-[*] -left-> 電源OFF
-電源OFF --> [*]
+電源OFF -> entry :SW押下
+exit --> 電源OFF :SW押下
+右旋回 -> exit
+左旋回 -> exit
+[*] -> 電源OFF
+電源OFF -> [*]
 @enduml
