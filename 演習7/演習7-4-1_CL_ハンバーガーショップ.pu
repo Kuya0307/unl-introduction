@@ -77,4 +77,5 @@ class チーズ{
 肉 --|> 材料
 野菜 --|> 材料
 チーズ --|> 材料
+hide circle
 @enduml
